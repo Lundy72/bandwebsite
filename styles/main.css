@@ -1,0 +1,259 @@
+/* Universal Selector */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Clearfix */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+/* Main Elements */
+html {
+  background-image: url("../images/acdcBackgroundImage.jpeg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+}
+
+header {
+  width: 100%;
+  padding: 32px;
+  background-color: maroon;
+}
+header h1 {
+  color: silver;
+  font-size: 550%;
+}
+header img {
+  border: 3px solid silver;
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin-right: 1em;
+}
+
+main {
+  margin: 20px;
+}
+
+#bandinfo {
+  float: left;
+  background-color: beige;
+  max-width: 40%;
+  width: 100%;
+  border: 3px solid silver;
+  border-radius: 20px;
+  margin-left: 5%;
+  margin-bottom: 20px;
+}
+#bandinfo h1, h2 {
+  margin: 10px .5em 10px .5em;
+}
+#bandinfo p {
+  margin: 10px 2em 40px 2em;
+}
+#bandinfo img {
+  margin: 0 12%;
+  width: 76%;
+}
+
+#topten {
+  float: right;
+  background-color: beige;
+  max-width: 40%;
+  width: 100%;
+  border: 3px solid silver;
+  border-radius: 20px;
+  margin-right: 5%;
+  margin-bottom: 20px;
+}
+#topten h1, h2 {
+  margin: 10px .5em 10px .5em;
+}
+#topten p {
+  margin: 10px 2em 40px 2em;
+}
+
+#videos {
+  background-color: beige;
+  max-width: 75%;
+  width: 100%;
+  border: 3px solid silver;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+#videos h1 {
+  margin: 10px .5em 10px .5em;
+}
+#videos iframe {
+  margin: 10px 3% 40px 3%;
+  width: 94%;
+  height: 700px;
+}
+
+
+/* Nav menu */
+.nav_menu {
+  border-top: 3px ridge silver;
+	border-bottom: 3px ridge silver;
+}
+.nav_menu ul {
+	display: flex;
+	list-style-type: none;
+	padding: 0; 
+}
+.nav_menu ul li {
+	width: 33.3%;
+	background-color: black;
+	margin: 0;
+	text-align: center; 
+	transition: all .75s;
+}
+.nav_menu ul li a {
+	display: inline-block;
+	width: 100%;
+	padding: 10px 0;
+	text-decoration: none;
+	font-size: 170%;
+	color: maroon;
+	font-weight: bold;
+	font-variant: small-caps;
+	transition: all .75s;
+}
+.nav_menu ul li a:hover {
+	background-color: white;
+	color: black;
+}
+
+
+/* Gallery Page */
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+.column { /* Create four equal columns that sits next to each other */
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  border-radius: 15px;
+  border: 3px ridge silver;
+}
+
+
+/* Footer */
+footer {
+  clear: both;
+  background-color: maroon;
+  border-top: 3px ridge silver;
+  border-bottom: 1px solid maroon;
+}
+footer p {
+  text-align: center;
+  margin: 80px 0;
+  color: white;
+}
+
+
+/* Hides Slicknav on full screen */
+.slicknav_menu {
+	display: none;
+}
+
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media only screen and (max-width: 767px) {
+	
+	/*  Hide the navigation menu and display the slicknav compact menu  */
+	.nav_menu {
+		display: none;
+	}
+	.slicknav_menu {
+		display: block;
+		background-color: black !important;
+	}
+	.slicknav_menu ul li a {
+		color: white !important;
+		font-size: 120% !important;
+	}
+	
+	/*  Increase body and main width and decrease font size  */
+	body, main {
+		width: 100%;
+		font-size: 85%;
+	}
+	
+	/*  Removed float from header image, display as block and auto margins to center in display  */
+	header img {
+		float: none;
+		display: block;
+		margin: 0 auto;
+		max-width: 60%;
+	}
+	h1 {
+		font-size: 120%;
+		text-align: center;
+	}
+
+  #topten {
+    float: none;
+    clear: both;
+    margin: 0 auto;
+    max-width: 75%;
+  }
+	
+  #bandinfo {
+    float: none;
+    clear: both;
+    margin: 0 auto;
+    max-width: 75%;
+    margin-bottom: 20px;
+  }
+  #bandinfo img {
+		float: none;
+		display: block;
+		margin: 0 auto;
+		max-width: 60%;
+	}
+
+  #videos iframe {
+    float: none;
+		display: block;
+		margin: 0 auto;
+		max-width: 96%;
+  }
+
+  .column {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+  }
+}
